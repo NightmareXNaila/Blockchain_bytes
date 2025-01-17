@@ -1,0 +1,628 @@
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-image: url('images/pic8.jpg'); /* Replace with the correct path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    color: #fff; /* Maintains text visibility */
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: -1; /* Ensures the overlay is behind all content */
+  }
+  
+  
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  font-family: 'Poppins', sans-serif; /* Modern and clean font */
+}
+
+.navbar h1 {
+  font-size: 2.5rem; /* Slightly larger font size for emphasis */
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase; /* Optional: make the title all caps */
+  letter-spacing: 2px; /* Add some spacing between letters */
+}
+
+.navbar h1:hover {
+  color: #6b47e0; /* Subtle hover color for interactivity */
+  transition: color 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500; /* Make links slightly bolder */
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #6b47e0; /* Purple hover effect */
+}
+
+/* Add a font size adjustment for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar h1 {
+    font-size: 2rem; /* Adjust font size for responsiveness */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.logo {
+  font-size: 2rem; /* Bold and big */
+  font-weight: bold; /* Strong visual weight */
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  text-transform:capitalize /* Make it stand out */
+  color: white; /* White text */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+               0 0 20px rgba(255, 255, 255, 0.6), 
+               0 0 40px rgba(255, 255, 255, 0.4); /* Glow effect */
+  animation: pulseGlow 3s infinite ease-in-out; /* Soft pulsing animation */
+  letter-spacing: 2px; /* Add spacing for emphasis */
+  cursor: pointer; /* Interactive feel */
+}
+
+/* Glow Animation */
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                 0 0 20px rgba(255, 255, 255, 0.6), 
+                 0 0 40px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1), 
+                 0 0 30px rgba(255, 255, 255, 0.9), 
+                 0 0 60px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                 0 0 20px rgba(255, 255, 255, 0.6), 
+                 0 0 40px rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Hover Effect */
+.logo:hover {
+  transform: scale(1.1); /* Slightly enlarge */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 1), 
+               0 0 40px rgba(255, 255, 255, 0.9), 
+               0 0 80px rgba(255, 255, 255, 0.7); /* Intensify glow */
+  transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth effect */
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+/* Hover Effect for Title */
+.logo:hover {
+  transform: scale(1.1) rotate(-2deg); /* Slight enlargement and rotation */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+  
+  .nav-links {
+    text-decoration: underline; /* Optional: underline effect */
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  .waitlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Get Started Button Styling */
+.btn-purple {
+  position: relative; /* Needed for pseudo-elements */
+  display: inline-block; /* Inline button styling */
+  padding: 15px 30px; /* Size of the button */
+  font-size: 1rem; /* Button text size */
+  font-weight: bold; /* Emphasize the button text */
+  color: #fff; /* White text color */
+  background: linear-gradient(45deg, #6b47e0, #a156f1); /* Gradient background */
+  border: none; /* Remove default border */
+  border-radius: 30px; /* Rounded edges */
+  text-transform: uppercase; /* Capitalize text */
+  letter-spacing: 1px; /* Slight spacing for clarity */
+  box-shadow: 0 8px 15px rgba(107, 71, 224, 0.4); /* Depth effect */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Keep effects inside the button */
+}
+
+/* Button Hover Effect */
+.btn-purple:hover {
+  transform: translateY(-5px); /* Slight lift */
+  box-shadow: 0 12px 20px rgba(107, 71, 224, 0.6); /* More prominent shadow */
+}
+
+/* Ripple Animation */
+.btn-purple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent 70%);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  border-radius: 50%;
+  transition: opacity 0.6s, transform 0.6s;
+  pointer-events: none; /* Prevent interference with clicks */
+}
+
+.btn-purple:hover::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.5); /* Expand ripple */
+}
+
+/* Glow Effect */
+.btn-purple::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px; /* Same as button radius */
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  opacity: 0;
+  z-index: -1; /* Behind the button */
+  transition: opacity 0.3s ease;
+}
+
+.btn-purple:hover::after {
+  opacity: 1; /* Make the glow visible */
+}
+
+/* Button Animation on Page Load */
+@keyframes buttonEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-purple {
+  animation: buttonEntrance 1s ease-out;
+}
+
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 100px 20px;
+    
+  }
+  
+ /* Styling for the hero title with white glow */
+.hero-title {
+  font-size: 3.5rem; /* Adjust as needed */
+  font-weight: bold;
+  text-align: center;
+  color: white; /* White text for the glow effect */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+               0 0 20px rgba(255, 255, 255, 0.6), 
+               0 0 40px rgba(255, 255, 255, 0.4), 
+               0 0 80px rgba(255, 255, 255, 0.2); /* White glow layers */
+  opacity: 0; /* Start invisible for animation */
+  animation: fadeInGlow 2.5s ease-out forwards, waveEffect 3s infinite ease-in-out;
+}
+
+/* Fade-in and slight scaling animation */
+@keyframes fadeInGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.9); /* Slightly smaller */
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05); /* Slightly larger */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1); /* Normal size */
+  }
+}
+
+/* Wave effect for dynamic movement */
+@keyframes waveEffect {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Hover effect for more glow */
+.hero-title:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 1), 
+               0 0 30px rgba(255, 255, 255, 0.9), 
+               0 0 60px rgba(255, 255, 255, 0.7), 
+               0 0 120px rgba(255, 255, 255, 0.5); /* Stronger glow */
+  transform: scale(1.1); /* Slight enlargement */
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.hero-title:hover {
+  transform: scale(1.1) rotate(2deg);
+  text-shadow: 0 0 20px rgba(255, 114, 148, 1), 0 0 40px rgba(255, 114, 148, 0.9);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+  .hero-subtitle {
+    margin: 20px 0;
+    font-size: 1.2rem;
+  }
+  
+  .btn-cta {
+    background-color: #6b47e0;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+ 
+  /* Container for crypto cards */
+.crypto-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Space between cards */
+  margin-top: 40px;
+  flex-wrap: wrap; /* Adjust layout for smaller screens */
+}
+
+.crypto-card {
+  background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  padding: 20px;
+  border-radius: 15px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Depth effect */
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative; /* For the glowing border effect */
+  overflow: hidden;
+  backdrop-filter: blur(8px); /* Blur effect for a frosted glass look */
+}
+
+/* Glow border effect */
+.crypto-card::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 15px;
+  background: linear-gradient(120deg, #6b47e0, #ff7294, #6b47e0); /* Dynamic glow */
+  z-index: -1; /* Place behind the card */
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show glow on hover */
+.crypto-card:hover::before {
+  opacity: 1;
+}
+
+/* Card content */
+.crypto-card p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Card image */
+.crypto-card img {
+  width: 80px;
+  height: 80px;
+  margin: 10px 0;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for image */
+.crypto-card:hover img {
+  transform: scale(1.2); /* Enlarge slightly */
+}
+
+/* Hover effect for the card */
+.crypto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(107, 71, 224, 0.6); /* Add a colored shadow */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .crypto-card {
+    width: 100%; /* Full width on smaller screens */
+    margin: 10px 0;
+  }
+}
+
+  
+  /* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero-title {
+      font-size: 3rem;
+    }
+  
+    .crypto-cards {
+      flex-wrap: wrap;
+    }
+  }
+  
+  /* Stats Section */
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+    background-color: #111;
+  }
+  
+  .stat-card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .stat-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+
+  /* Stats Section Styling */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 20px;
+  background-color: #0d0d0d; /* Subtle background for better contrast */
+  flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+/* Individual Stat Card */
+.stat-card {
+  position: relative; /* For decorative elements */
+  background: linear-gradient(145deg, #1e1e1e, #292929); /* Smooth gradient */
+  color: #fff;
+  padding: 30px;
+  border-radius: 15px; /* Rounded corners for a softer look */
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Ensures decorative elements stay within bounds */
+}
+
+/* Decorative Glow Effect */
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(107, 71, 224, 0.5), transparent 60%);
+  animation: rotateGlow 6s linear infinite;
+  z-index: 0; /* Behind the content */
+  transform: rotate(0deg);
+}
+
+/* Rotating Glow Animation */
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hover Effects */
+.stat-card:hover {
+  transform: translateY(-10px); /* Lift effect */
+  box-shadow: 0 12px 25px rgba(107, 71, 224, 0.7); /* More pronounced shadow */
+}
+
+/* Ensure Content Stays on Top */
+.stat-card h2,
+.stat-card p {
+  position: relative; /* Above decorative effects */
+  z-index: 1;
+  margin: 10px 0;
+}
+
+/* Stat Card Header */
+.stat-card h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #6b47e0; /* Accent color for currency symbol */
+  text-shadow: 0 0 10px rgba(107, 71, 224, 0.8);
+}
+
+/* Stat Card Value */
+.stat-card p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #eaeaea; /* Softer contrast for numbers */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .stat-card {
+    width: 100%;
+    margin: 10px 0; /* Add spacing between cards */
+  }
+}
+
+/* Stats Section */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 20px;
+
+  background-size: cover;
+  position: relative;
+  color: #fff;
+  z-index: 1;
+}
+
+.stats::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Add a dark overlay for better text visibility */
+  z-index: -1;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1); /* Transparent card background */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.5);
+}
+
+.stat-card h2 {
+  margin-bottom: 10px;
+  font-size: 2rem; /* Bigger and bolder font size */
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.stat-card p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+  
+/* Waitlist Section */
+.waitlist {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to bottom, #111, #000);
+  }
+  
+  .waitlist input {
+    padding: 10px;
+    width: 300px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .waitlist button {
+    display: block;
+    margin: 20px auto;
+    background-color: #6b47e0;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .social-icons a {
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  .social-icons a:hover {
+    color: #6b47e0; /* Purple on hover */
+  }

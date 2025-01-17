@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Bytes</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+  <!-- AOS Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+
+    /* Set the background for the entire page (fixed background) */
+html, body {
+  height: 100%; /* Full height for both html and body */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  background-image: url('images/pic8.jpg'); /* Replace with your image path */
+  background-size: cover; /* Ensure the background covers the entire page */
+  background-position: center; /* Center the background */
+  background-attachment: fixed; /* Fix the background when scrolling */
+  color: white; /* Text color for visibility */
+}
+
+/* Add padding to the body to accommodate the navbar */
+body {
+  padding-top: 70px; /* Adjust based on the navbar height */
+}
+
+    /* Navbar styling with a transparent background so the background image is visible */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(51, 51, 51, 0.6); /* Semi-transparent background for navbar */
+      padding: 10px 20px;
+      z-index: 1000; /* Ensure navbar stays on top of other content */
+      backdrop-filter: blur(5px); /* Optional: Apply a blur effect to the navbar background */
+    }
+
+    /* Add padding to the body to prevent content from being hidden behind the navbar */
+    body {
+      padding-top: 70px; /* Adjust based on navbar height */
+      color: white; /* Text color for readability */
+    }
+
+    /* Smooth scrolling for the page */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Section styling */
+    .hero {
+      padding: 100px 20px; /* Add padding to create space for content */
+      text-align: center;
+    }
+
+    .stats, .waitlist {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5); /* Footer background color */
+    }
+
+    /* Scroll animations */
+    .scroll-animate {
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Blockchain Bytes</div>
+    <ul class="nav-links">
+      <li><a>About</a></li>
+      <li><a>Features</a></li>
+      <li><a >Testimonials</a></li>
+      <li><a>Membership</a></li>
+    </ul>
+    <button class="btn-purple">Get Started</button>
+  </nav>
+</style>
+</head>
+<body>
+
+   <!-- Hero Section -->
+   <section class="hero">
+    <h1 class="hero-title" data-aos="fade-up" data-aos-duration="2000">Unlock Your Crypto Potential</h1>
+    <p class="hero-subtitle">Save money on every trade with our competitive fee structure.</p>
+    <button class="btn-cta">Get Started</button>
+    <div class="crypto-cards">
+      <div class="crypto-card btc">
+        <p>Bitcoin BTC</p>
+        <img src="images/btc-logo.png" alt="Bitcoin" />
+      </div>
+      <div class="crypto-card eth">
+        <p>Ethereum ETH</p>
+        <img src="images/eth-logo.png" alt="Ethereum" />
+      </div>
+      <div class="crypto-card uni">
+        <p>Uniswap UNI</p>
+        <img src="images/uni-logo.png" alt="Uniswap" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Stats Section -->
+  <section id="stats" class="stats">
+    <div class="stat-card">
+      <h2>BTC</h2>
+      <p>$18,765.76</p>
+    </div>
+    <div class="stat-card">
+      <h2>ETH</h2>
+      <p>$1,578.29</p>
+    </div>
+    <div class="stat-card">
+      <h2>BNB</h2>
+      <p>$389.90</p>
+    </div>
+    <div class="stat-card">
+      <h2>LTC</h2>
+      <p>$2,857.46</p>
+    </div>
+  </section>
+
+  <!-- Waitlist Section -->
+  <section id="waitlist" class="waitlist">
+    <h1>Coming Soon!</h1>
+    <p>Join our waitlist and be the first to know when we launch.</p>
+    <input type="email" placeholder="Enter your email address" />
+    <button class="btn-cta">Join Waitlist</button>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Blockchain Bytes. All Rights Reserved.</p>
+      <div class="social-icons">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
